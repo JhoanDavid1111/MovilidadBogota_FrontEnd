@@ -1,0 +1,122 @@
+<div class="card bg-dark text-white">
+<div class="card-header">Reportar Movilidad</div>
+<div class="card-body">
+
+<form (ngSubmit) = "create()">
+      <div class="form-group row">
+         <label for="nombre" class="col.form-label col-sm-2">Nombre</label>
+      <div class="col-sm-6">
+        <input type="text" class="form.control" [(ngModel)]="cliente.nombre" name="nombre" required #nombre="ngModel" style="width:250px">
+        <div class="alert alert-danger" *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)">
+          <div *ngIf="nombre.errors.required">
+            Nombre es requerido
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group row">
+       <label for="numeroDocumento" class="col.form-label col-sm-2">Numero de Documento</label>
+    <div class="col-sm-6">
+      <input type="text" class="form.control" [(ngModel)]="cliente.numeroDocumento" name="numeroDocumento" required #numeroDocumento="ngModel" style="width:250px">
+      <div class="alert alert-danger" *ngIf="numeroDocumento.invalid && (numeroDocumento.dirty || numeroDocumento.touched)">
+        <div *ngIf="numeroDocumento.errors.required">
+          El número de documento es requerido
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+     <label for="tipoDocumento" class="col.form-label col-sm-2">Tipo de Documento</label>
+  <div class="col-sm-6">
+    <select class="form.control" [(ngModel)]="cliente.tipoDocumento" name="tipoDocumento"required #tipoDocumento="ngModel" style="width:250px">
+      <option value="Cedula">Cedula</option>
+      <option value="Pasaporte">Pasaporte</option>
+      <option value="Cedula de Extranjeria">Cedula de Extranjeria</option>
+      </select>
+      <div *ngIf="tipoDocumento.errors.required" style="color:red;">
+        El tipo de documento es requerido!
+      </div>
+  </div>
+</div>
+
+<div class="form-group row">
+   <label for="localidadResidencia" class="col.form-label col-sm-2">Localidad de residencia</label>
+<div class="col-sm-6">
+  <select class="form.control" [(ngModel)]="cliente.localidadResidencia" name="localidadResidencia"required #localidadResidencia="ngModel" style="width:150px">
+    <option value="Usaquen">Usaquen</option>
+    <option value="Chapinero">Chapinero</option>
+    <option value="Suba">Suba</option>
+    </select>
+    <div *ngIf="localidadResidencia.errors.required" style="color:red;">
+      La localidad de residencia es requerida!
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+   <label for="horaSalida" class="col.form-label col-sm-2">Hora de salida desde el hogar</label>
+<div class="col-sm-6">
+  <select class="form.control" [(ngModel)]="cliente.horaSalida" name="horaSalida"required #horaSalida="ngModel" style="width:150px">
+    <option value="1:00am">01:00 am</option>
+    <option value="3:00am">03:00 am</option>
+    <option value="7:00am">07:00 am</option>
+    </select>
+    <div *ngIf="horaSalida.errors.required" style="color:red;">
+      La hora de salida es requerida!
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+   <label for="localidadDestino" class="col.form-label col-sm-2">Localidad de destino</label>
+<div class="col-sm-6">
+  <select class="form.control" [(ngModel)]="cliente.localidadDestino" name="localidadDestino"required #localidadDestino="ngModel" style="width:150px">
+    <option value="Usaquen">Usaquen</option>
+    <option value="Chapinero">Chapinero</option>
+    <option value="Suba">Suba</option>
+    </select>
+    <div *ngIf="localidadDestino.errors.required" style="color:red;">
+      La Localidad de destino es requerida!
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+   <label for="horaRetorno" class="col.form-label col-sm-2">Hora de salida hacia el hogar</label>
+<div class="col-sm-6">
+  <select class="form.control" [(ngModel)]="cliente.horaRetorno" name="horaRetorno"required #horaRetorno="ngModel" style="width:150px">
+    <option value="1:00am">01:00 am</option>
+    <option value="3:00am">03:00 am</option>
+    <option value="7:00am">07:00 am</option>
+    </select>
+    <div *ngIf="horaRetorno.errors.required" style="color:red;">
+      La hora de retorno es requerida!
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+   <label for="MedioTransporte" class="col.form-label col-sm-2">Medio de transporte</label>
+<div class="col-sm-6">
+  <select class="form.control" [(ngModel)]="cliente.MedioTransporte" name="MedioTransporte"required #MedioTransporte="ngModel" style="width:150px">
+    <option value="Moto">Moto</option>
+    <option value="Carro">Carro</option>
+    <option value="Bicicleta">Bicicleta</option>
+    </select>
+    <div *ngIf="MedioTransporte.errors.required" style="color:red;">
+      El medio de transporte es requerido!
+    </div>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-sm-6">
+    <button class="btn btn-primary" role="button">Guardar Información</button>
+  </div>
+</div>
+
+   </form>
+  </div>
+</div>
