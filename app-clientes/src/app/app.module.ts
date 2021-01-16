@@ -9,11 +9,19 @@ import { RouterModule, Routes} from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './clientes/form.component';
 import { FormsModule } from '@angular/forms';
+//import { TransporteComponent } from './clientes/transporte.component';
+import { TransporteService } from "./clientes/transporte.service";
+import { FinalizarComponent } from './clientes/finalizar.component';
+
+
+
 
 const routes: Routes = [
   {path: '', redirectTo: '/clientes', pathMatch: 'full'},
   {path: 'clientes', component: ClientesComponent},
-  {path: 'clientes/form', component: FormComponent}
+  {path: 'clientes/form', component: FormComponent},
+  {path: 'clientes/finalizar', component: FinalizarComponent},
+  //{path: 'clientes/transporte', component: TransporteComponent},
 
 ];
 
@@ -22,7 +30,9 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     FormComponent,
-    ClientesComponent
+    ClientesComponent,
+    FinalizarComponent
+    //TransporteComponent,
   ],
   imports: [
     BrowserModule,

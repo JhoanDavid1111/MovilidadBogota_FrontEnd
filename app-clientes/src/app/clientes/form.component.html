@@ -101,19 +101,22 @@
    <label for="MedioTransporte" class="col.form-label col-sm-2">Medio de transporte</label>
 <div class="col-sm-6">
   <select class="form.control" [(ngModel)]="cliente.MedioTransporte" name="MedioTransporte"required #MedioTransporte="ngModel" style="width:150px">
-    <option value="Moto">Moto</option>
-    <option value="Carro">Carro</option>
+    <option value="Transporte público">Transporte público</option>
+    <option value="Vehículo alquilado">Vehículo alquilado</option>
+    <option value="A pie">A pie</option>
     <option value="Bicicleta">Bicicleta</option>
+    <option value="Moto">Moto</option>
+    <option value="Vehículo propio">Vehículo propio</option>
     </select>
-    <div *ngIf="MedioTransporte.errors.required" style="color:red;">
-      El medio de transporte es requerido!
+    <div *ngIf="horaRetorno.errors.required" style="color:red;">
+      El medio de transporte es reuqerido!
     </div>
   </div>
 </div>
 
 <div class="form-group row">
   <div class="col-sm-6">
-    <button class="btn btn-primary" role="button">Guardar Información</button>
+    <button class="btn btn-primary" role="button" (click)='create()' *ngIf="!cliente.id else elseBlock" [disabled]="!clienteForm.form.valid">Guardar Información</button>
   </div>
 </div>
 

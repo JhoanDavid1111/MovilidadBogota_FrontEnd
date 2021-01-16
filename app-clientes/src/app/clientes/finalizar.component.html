@@ -1,0 +1,19 @@
+<div class="container">
+<div class="card bg-dark text-white">
+<div class="card-header">Reportar Movilidad</div>
+<div class="card-body">
+<h1>Gracias</h1>
+<h3>Tu información ha sido recibida</h3>
+<h5>{{ cliente.nombre }} identificado con {{ cliente.tipoDocumento }} y numero documento {{ cliente.numeroDocumento }}</h5>
+<div style="color:blue;">
+  <p>realizó su reporte de movilidad segura y reporto que se encuentra en alguna de las actividades exceptuadas para circular en Bogotá.<br><br>Razon por la que te movilizas<br><br>*El ciudadano declara que la información registrada en el formulario es veridica y por lo tanto está dentro de las actividades</p>
+</div>
+
+<div class="col-sm-6">
+  <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/clientes']">
+     Finalizar
+   </button>
+      </div>
+    </div>
+  </div>
+</div>
